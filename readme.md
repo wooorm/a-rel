@@ -1,4 +1,4 @@
-# a-rel [![Build Status][build-badge]][build-page] [![Coverage Status][coverage-badge]][coverage-page]
+# a-rel [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
 List of values viable for use in `rel` attributes on `a`
 (and `area`) elements, as defined by [HTML5][spec] and
@@ -11,9 +11,6 @@ List of values viable for use in `rel` attributes on `a`
 ```bash
 npm install a-rel
 ```
-
-**a-rel** is also available as an AMD, CommonJS, and globals
-module, [uncompressed and compressed][releases].
 
 ## Usage
 
@@ -67,19 +64,17 @@ on `a` and `area` elements.
 
 [MIT][license] © [Titus Wormer][author]
 
-<!-- Definition -->
+<!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/a-rel.svg
+[travis-badge]: https://img.shields.io/travis/wooorm/a-rel.svg
 
-[build-page]: https://travis-ci.org/wooorm/a-rel
+[travis]: https://travis-ci.org/wooorm/a-rel
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/a-rel.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/a-rel.svg
 
-[coverage-page]: https://codecov.io/github/wooorm/a-rel?branch=master
+[codecov]: https://codecov.io/github/wooorm/a-rel
 
 [npm]: https://docs.npmjs.com/cli/install
-
-[releases]: https://github.com/wooorm/a-rel/releases
 
 [license]: LICENSE
 

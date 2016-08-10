@@ -8,32 +8,17 @@
 
 'use strict';
 
-/* eslint-env node */
-
-/*
- * Module dependencies.
- */
-
+/* Module dependencies. */
 var test = require('tape');
 var aRel = require('./index.js');
 
-/*
- * Tests.
- */
-
+/* Tests. */
 test('aRel', function (t) {
-    t.ok(
-        Array.isArray(aRel),
-        'should be an `array`'
-    );
+  t.ok(Array.isArray(aRel), 'should be an `array`');
 
-    aRel.forEach(function (tagName) {
-        t.equal(
-            typeof tagName,
-            'string',
-            '`' + tagName + '` should be a string'
-        );
-    });
+  aRel.forEach(function (tagName) {
+    t.equal(typeof tagName, 'string', '`' + tagName + '` should be a string');
+  });
 
-    t.end();
+  t.end();
 });
