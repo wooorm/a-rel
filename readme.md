@@ -14,15 +14,8 @@ npm install a-rel
 
 ## Usage
 
-Dependencies:
-
 ```javascript
 var aRel = require('a-rel');
-```
-
-Slicing the first few items:
-
-```javascript
 var head = aRel.slice(0, 10);
 ```
 
@@ -39,18 +32,6 @@ Yields:
   'canonical',
   'category',
   'chapter' ]
-```
-
-And, computing `length`:
-
-```javascript
-var length = aRel.length;
-```
-
-Yields:
-
-```js
-69
 ```
 
 ## API
