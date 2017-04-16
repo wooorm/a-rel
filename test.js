@@ -1,24 +1,20 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module a-rel
- * @fileoverview Test suite for `a-rel`.
- */
-
 'use strict';
 
-/* Module dependencies. */
+var assert = require('assert');
 var test = require('tape');
 var aRel = require('./');
 
-/* Tests. */
 test('aRel', function (t) {
-  t.ok(Array.isArray(aRel), 'should be an `array`');
+  t.ok(Array.isArray(aRel), 'should be an array');
 
-  aRel.forEach(function (tagName) {
-    t.equal(typeof tagName, 'string', '`' + tagName + '` should be a string');
-  });
+  t.doesNotThrow(
+    function () {
+      aRel.forEach(function (rel) {
+        assert.equal(typeof rel, 'string', '`' + rel + '` should be a string');
+      });
+    },
+    'should be a list of strings'
+  );
 
   t.end();
 });

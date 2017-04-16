@@ -1,14 +1,5 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module a-rel:script:build
- * @fileoverview Crawl the table of attributes.
- */
-
 'use strict';
 
-/* Dependencies. */
 var fs = require('fs');
 var path = require('path');
 var https = require('https');
