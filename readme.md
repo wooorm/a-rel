@@ -1,4 +1,4 @@
-# a-rel [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# a-rel [![Build Status][travis-badge]][travis]
 
 List of values viable for use in `rel` attributes on `a`
 (and `area`) elements, as defined by [HTML5][spec] and
@@ -69,10 +69,6 @@ on `a` and `area` elements.
 [travis-badge]: https://img.shields.io/travis/wooorm/a-rel.svg
 
 [travis]: https://travis-ci.org/wooorm/a-rel
-
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/a-rel.svg
-
-[codecov]: https://codecov.io/github/wooorm/a-rel
 
 [npm]: https://docs.npmjs.com/cli/install
 

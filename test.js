@@ -10,7 +10,7 @@
 
 /* Module dependencies. */
 var test = require('tape');
-var aRel = require('./index.js');
+var aRel = require('./');
 
 /* Tests. */
 test('aRel', function (t) {
