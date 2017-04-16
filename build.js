@@ -5,12 +5,7 @@ var path = require('path');
 var https = require('https');
 var bail = require('bail');
 
-/* Input / output locations. */
-var w3c = 'https://help.whatwg.org/extensions/a-rel/';
-var output = path.join(__dirname, '..', 'index.json');
-
-/* Crawl W3C. */
-https.get(w3c, function (res, err) {
+https.get('https://help.whatwg.org/extensions/a-rel/', function (res, err) {
   var value = '';
 
   bail(err);
@@ -25,10 +20,6 @@ https.get(w3c, function (res, err) {
 
       value = value.split('\n').sort().filter(Boolean);
 
-      fs.writeFile(
-        output,
-        JSON.stringify(value, 0, 2) + '\n',
-        bail
-      );
+      fs.writeFile('index.json', JSON.stringify(value, 0, 2) + '\n', bail);
     });
 });
