@@ -1,8 +1,7 @@
 # a-rel [![Build Status][travis-badge]][travis]
 
 List of values viable for use in `rel` attributes on `a`
-(and `area`) elements, as defined by [HTML5][spec] and
-[MicroFormats][extensions].
+(and `area`) elements, as defined by [MicroFormats][extensions].
 
 ## Installation
 
@@ -16,7 +15,8 @@ npm install a-rel
 
 ```javascript
 var aRel = require('a-rel');
-var head = aRel.slice(0, 10);
+
+console.log(aRel.slice(0, 10));
 ```
 
 Yields:
@@ -56,7 +56,5 @@ on `a` and `area` elements.
 [license]: LICENSE
 
 [author]: http://wooorm.com
-
-[spec]: https://html.spec.whatwg.org/#linkTypes
 
 [extensions]: http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions
