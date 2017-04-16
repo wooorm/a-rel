@@ -41,6 +41,21 @@ Yields:
 `Array.<string>` — List of lower-case possible link types for `rel`
 on `a` and `area` elements.
 
+## Related
+
+*   [`aria-attributes`](https://github.com/wooorm/aria-attributes)
+    — List of ARIA attributes
+*   [`html-dangerous-encodings`](https://github.com/wooorm/html-dangerous-encodings)
+    — List of dangerous HTML character encoding labels
+*   [`html-encodings`](https://github.com/wooorm/html-encodings)
+    — List of HTML character encoding labels
+*   [`link-rel`](https://github.com/wooorm/link-rel)
+    — List of link types for `rel` on `link`
+*   [`meta-name`](https://github.com/wooorm/meta-name)
+    — List of values for `name` on `meta`
+*   [`web-namespaces`](https://github.com/wooorm/web-namespaces)
+    — Map of web namespaces
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
