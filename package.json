@@ -13,7 +13,6 @@
     "attribute",
     "w3c"
   ],
-  "dependencies": {},
   "repository": "https://github.com/wooorm/a-rel",
   "bugs": "https://github.com/wooorm/a-rel/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
@@ -24,6 +23,7 @@
   "files": [
     "index.json"
   ],
+  "dependencies": {},
   "devDependencies": {
     "bail": "^1.0.1",
     "browserify": "^14.1.0",
