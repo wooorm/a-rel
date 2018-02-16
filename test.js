@@ -2,7 +2,7 @@
 
 var assert = require('assert');
 var test = require('tape');
-var aRel = require('./');
+var aRel = require('.');
 
 test('aRel', function (t) {
   t.ok(Array.isArray(aRel), 'should be an array');

@@ -51,9 +51,10 @@
   "xo": {
     "space": true,
     "esnext": false,
-    "ignores": [
-      "a-rel.js"
-    ]
+    "rules": {
+      "no-var": "off",
+      "prefer-arrow-callback": "off"
+    }
   },
   "remarkConfig": {
     "plugins": [
