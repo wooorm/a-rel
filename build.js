@@ -1,24 +1,41 @@
 'use strict';
 
 var fs = require('fs');
-var https = require('https');
+var http = require('http');
+var concat = require('concat-stream');
 var bail = require('bail');
+var unified = require('unified');
+var html = require('rehype-parse');
+var select = require('hast-util-select');
+var toString = require('hast-util-to-string');
 
-https.get('https://help.whatwg.org/extensions/a-rel/', function (res, err) {
-  var value = '';
+http.get('http://microformats.org/wiki/existing-rel-values', onconnection);
 
-  bail(err);
+function onconnection(res) {
+  res.pipe(concat(onconcat));
 
-  res
-    .setEncoding('utf8')
-    .on('data', function (buf) {
-      value += buf;
-    })
-    .on('end', function (err) {
-      bail(err);
+  function onconcat(buf) {
+    var tree = unified().use(html).parse(buf);
+    var value = table('formats').concat(table('HTML5_link_type_extensions'));
 
-      value = value.split('\n').sort().filter(Boolean);
+    fs.writeFile('index.json', JSON.stringify(value.sort(), 0, 2) + '\n', bail);
 
-      fs.writeFile('index.json', JSON.stringify(value, 0, 2) + '\n', bail);
-    });
-});
+    function table(name) {
+      var node = select.select('[name=' + name + '] ~ table', tree);
+      var rows = select.selectAll('tr', node).slice(1);
+      return rows.map(cells).filter(filter).map(pick);
+    }
+  }
+}
+
+function cells(row) {
+  return select.selectAll('td', row).map(toString);
+}
+
+function filter(cells) {
+  return !/not allowed/i.test(cells[2].trim());
+}
+
+function pick(cells) {
+  return cells[0].trim();
+}
