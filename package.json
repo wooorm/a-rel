@@ -13,7 +13,7 @@
     "attribute",
     "w3c"
   ],
-  "repository": "https://github.com/wooorm/a-rel",
+  "repository": "wooorm/a-rel",
   "bugs": "https://github.com/wooorm/a-rel/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
