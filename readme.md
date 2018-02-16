@@ -1,7 +1,8 @@
 # a-rel [![Build Status][travis-badge]][travis]
 
 List of values viable for use in `rel` attributes on `a`
-(and `area`) elements, as defined by [MicroFormats][extensions].
+(and `area`) elements, as defined by the [MicroFormats][extensions] **formats**
+and **HTML5 link type extensions** tables.
 
 ## Installation
 
@@ -72,4 +73,4 @@ on `a` and `area` elements.
 
 [author]: http://wooorm.com
 
-[extensions]: http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions
+[extensions]: http://microformats.org/wiki/existing-rel-values
