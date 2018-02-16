@@ -27,12 +27,12 @@ Yields:
   'alternate',
   'amphtml',
   'appendix',
-  'archived',
   'attachment',
   'bookmark',
   'canonical',
   'category',
-  'chapter' ]
+  'chapter',
+  'child' ]
 ```
 
 ## API
