@@ -3,3 +3,4 @@
 node_modules/
 a-rel.js
 a-rel.min.js
+yarn.lock
