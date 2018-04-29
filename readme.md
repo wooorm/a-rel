@@ -15,9 +15,9 @@ npm install a-rel
 ## Usage
 
 ```javascript
-var aRel = require('a-rel');
+var aRel = require('a-rel')
 
-console.log(aRel.slice(0, 10));
+console.log(aRel.slice(0, 10))
 ```
 
 Yields:
