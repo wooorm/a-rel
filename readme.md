@@ -71,6 +71,6 @@ on `a` and `area` elements.
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
 [extensions]: http://microformats.org/wiki/existing-rel-values
