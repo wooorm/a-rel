@@ -9,7 +9,11 @@ test('aRel', function(t) {
 
   t.doesNotThrow(function() {
     aRel.forEach(function(rel) {
-      assert.equal(typeof rel, 'string', '`' + rel + '` should be a string')
+      assert.strictEqual(
+        typeof rel,
+        'string',
+        '`' + rel + '` should be a string'
+      )
     })
   }, 'should be a list of strings')
 
