@@ -1,4 +1,8 @@
-# a-rel [![Build Status][travis-badge]][travis]
+# a-rel
+
+[![Build][build-badge]][build]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 List of values viable for use in `rel` attributes on `a`
 (and `area`) elements, as defined by the [MicroFormats][extensions] **formats**
@@ -63,9 +67,17 @@ on `a` and `area` elements.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/a-rel.svg
+[build-badge]: https://img.shields.io/travis/wooorm/a-rel.svg
 
-[travis]: https://travis-ci.org/wooorm/a-rel
+[build]: https://travis-ci.org/wooorm/a-rel
+
+[downloads-badge]: https://img.shields.io/npm/dm/a-rel.svg
+
+[downloads]: https://www.npmjs.com/package/a-rel
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/a-rel.svg
+
+[size]: https://bundlephobia.com/result?p=a-rel
 
 [npm]: https://docs.npmjs.com/cli/install
 
