@@ -4,21 +4,21 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-List of values viable for use in `rel` attributes on `a`
-(and `area`) elements, as defined by the [MicroFormats][extensions] **formats**
-and **HTML5 link type extensions** tables.
+List of values viable for use in `rel` attributes on `a` (and `area`) elements,
+as defined by the [MicroFormats][extensions] **formats** and **HTML5 link type
+extensions** tables.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install a-rel
 ```
 
-## Usage
+## Use
 
-```javascript
+```js
 var aRel = require('a-rel')
 
 console.log(aRel.slice(0, 10))
@@ -43,8 +43,8 @@ Yields:
 
 ### `aRel`
 
-`Array.<string>` — List of lower-case possible link types for `rel`
-on `a` and `area` elements.
+`Array.<string>` — List of lowercase possible link types for `rel` on `a` and
+`area` elements.
 
 ## Related
 
@@ -54,6 +54,8 @@ on `a` and `area` elements.
     — List of dangerous HTML character encoding labels
 *   [`html-encodings`](https://github.com/wooorm/html-encodings)
     — List of HTML character encoding labels
+*   [`html-link-types`](https://github.com/wooorm/html-link-types)
+    — List of link types as used in HTML
 *   [`link-rel`](https://github.com/wooorm/link-rel)
     — List of link types for `rel` on `link`
 *   [`meta-name`](https://github.com/wooorm/meta-name)
