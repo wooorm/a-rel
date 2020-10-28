@@ -13,8 +13,8 @@ var proc = unified().use(html)
 
 http.get('http://microformats.org/wiki/existing-rel-values', onconnection)
 
-function onconnection(res) {
-  res.pipe(concat(onconcat))
+function onconnection(response) {
+  response.pipe(concat(onconcat))
 }
 
 function onconcat(buf) {
@@ -27,10 +27,7 @@ function onconcat(buf) {
     var node = select.select('[name=' + name + '] ~ table', tree)
     var rows = select.selectAll('tr', node).slice(1)
 
-    return rows
-      .map(cells)
-      .filter(filter)
-      .map(pick)
+    return rows.map(cells).filter(filter).map(pick)
   }
 }
 

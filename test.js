@@ -4,11 +4,11 @@ var assert = require('assert')
 var test = require('tape')
 var aRel = require('.')
 
-test('aRel', function(t) {
+test('aRel', function (t) {
   t.ok(Array.isArray(aRel), 'should be an array')
 
-  t.doesNotThrow(function() {
-    aRel.forEach(function(rel) {
+  t.doesNotThrow(function () {
+    aRel.forEach(function (rel) {
       assert.strictEqual(
         typeof rel,
         'string',
