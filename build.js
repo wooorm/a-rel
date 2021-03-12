@@ -1,13 +1,11 @@
-'use strict'
-
-var fs = require('fs')
-var https = require('https')
-var concat = require('concat-stream')
-var bail = require('bail')
-var unified = require('unified')
-var html = require('rehype-parse')
-var select = require('hast-util-select')
-var toString = require('hast-util-to-string')
+import fs from 'fs'
+import https from 'https'
+import concat from 'concat-stream'
+import bail from 'bail'
+import unified from 'unified'
+import html from 'rehype-parse'
+import select from 'hast-util-select'
+import toString from 'hast-util-to-string'
 
 var proc = unified().use(html)
 
@@ -25,7 +23,11 @@ function onconcat(buf) {
     bail(new Error('Couldn’t find any rels'))
   }
 
-  fs.writeFile('index.json', JSON.stringify(value.sort(), 0, 2) + '\n', bail)
+  fs.writeFile(
+    'index.js',
+    'export var aRel = ' + JSON.stringify(value.sort(), null, 2) + '\n',
+    bail
+  )
 
   function table(name) {
     var node = select.select('h2:has(#' + name + ') ~ table', tree)

@@ -1,8 +1,6 @@
-'use strict'
-
-var assert = require('assert')
-var test = require('tape')
-var aRel = require('.')
+import assert from 'assert'
+import test from 'tape'
+import {aRel} from './index.js'
 
 test('aRel', function (t) {
   t.ok(Array.isArray(aRel), 'should be an array')

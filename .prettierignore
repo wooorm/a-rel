@@ -1,4 +1,2 @@
-*.json
+coverage/
 *.md
-a-rel.js
-a-rel.min.js

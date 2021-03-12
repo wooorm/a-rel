@@ -11,6 +11,9 @@ extensions** tables.
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -20,7 +23,7 @@ npm install a-rel
 ## Use
 
 ```js
-var aRel = require('a-rel')
+import {aRel} from 'a-rel'
 
 console.log(aRel.slice(0, 10))
 ```
@@ -42,10 +45,13 @@ Yields:
 
 ## API
 
+This package exports the following identifiers: `aRel`.
+There is no default export.
+
 ### `aRel`
 
-`Array.<string>` — List of lowercase possible link types for `rel` on `a` and
-`area` elements.
+`string[]` — List of lowercase possible link types for `rel` on `a` and `area`
+elements.
 
 ## Related
 
