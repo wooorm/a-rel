@@ -1,6 +1,7 @@
 # a-rel
 
 [![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
@@ -69,9 +70,13 @@ Yields:
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/a-rel.svg
+[build-badge]: https://github.com/wooorm/a-rel/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/a-rel
+[build]: https://github.com/wooorm/a-rel/actions
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/a-rel.svg
+
+[coverage]: https://codecov.io/github/wooorm/a-rel
 
 [downloads-badge]: https://img.shields.io/npm/dm/a-rel.svg
 
