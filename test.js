@@ -8,13 +8,14 @@ test('aRel', function (t) {
   t.ok(Array.isArray(aRel), 'should be an array')
 
   t.doesNotThrow(function () {
-    aRel.forEach(function (rel) {
+    var index = -1
+    while (++index < aRel.length) {
       assert.strictEqual(
-        typeof rel,
+        typeof aRel[index],
         'string',
-        '`' + rel + '` should be a string'
+        '`' + aRel[index] + '` should be a string'
       )
-    })
+    }
   }, 'should be a list of strings')
 
   t.end()

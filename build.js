@@ -30,19 +30,20 @@ function onconcat(buf) {
   function table(name) {
     var node = select.select('h2:has(#' + name + ') ~ table', tree)
     var rows = select.selectAll('tr', node).slice(1)
+    var index = -1
+    var result = []
+    var cells
 
-    return rows.map(cells).filter(filter).map(pick)
+    while (++index < rows.length) {
+      cells = select.selectAll('td', rows[index])
+
+      if (/not allowed/i.test(toString(cells[2]).trim())) {
+        continue
+      }
+
+      result.push(toString(cells[0]).trim())
+    }
+
+    return result
   }
-}
-
-function cells(row) {
-  return select.selectAll('td', row).map(toString)
-}
-
-function filter(cells) {
-  return !/not allowed/i.test(cells[2].trim())
-}
-
-function pick(cells) {
-  return cells[0].trim()
 }
