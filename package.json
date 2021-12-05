@@ -1,6 +1,6 @@
 {
   "name": "a-rel",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "List of values for `rel` on `<a>` and `<area>` elements according to Microformats",
   "license": "MIT",
   "keywords": [
