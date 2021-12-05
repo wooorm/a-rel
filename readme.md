@@ -6,17 +6,58 @@
 [![Size][size-badge]][size]
 
 List of values for `rel` on `<a>` and `<area>` elements according to
-[Microformats][extensions].
+[Microformats][].
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`aRel`](#arel)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package lists values that are allowed in `rel` attributes on `<a>` and
+`<area>` elements.
+These values come from [Microformats][].
+
+## When should I use this?
+
+Use this package for a list of MicroFormats extensions on `<a>` and `<area>`
+elements.
+See [`link-rel`][link-rel] for a list of MicroFormats extensions to `<link>`
+and [`html-link-types`][html-link-types] if you specifically need to check which
+values are allowed by the HTML spec.
 
 ## Install
 
-This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
-instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install a-rel
+```
+
+In Deno with [Skypack][]:
+
+```js
+import {aRel} from 'https://cdn.skypack.dev/a-rel@3?dts'
+```
+
+In browsers with [Skypack][]:
+
+```html
+<script type="module">
+  import {aRel} from 'https://cdn.skypack.dev/a-rel@3?min'
+</script>
 ```
 
 ## Use
@@ -30,16 +71,18 @@ console.log(aRel.slice(0, 10))
 Yields:
 
 ```js
-[ 'acquaintance',
+[
+  'about',
+  'acquaintance',
   'alternate',
   'amphtml',
   'appendix',
+  'archived',
   'attachment',
   'bookmark',
   'canonical',
-  'category',
-  'chapter',
-  'child' ]
+  'category'
+]
 ```
 
 ## API
@@ -49,25 +92,44 @@ There is no default export.
 
 ### `aRel`
 
-`Array<string>` — List of lowercase possible link types for `rel` on `a` and `area`
-elements.
+List of lowercase types (`Array<string>`).
+
+## Types
+
+This package is fully typed with [TypeScript][].
+There are no extra exported types.
+
+## Compatibility
+
+This package is at least compatible with all maintained versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+It also works in Deno and modern browsers.
+
+## Security
+
+This package is safe.
 
 ## Related
 
-*   [`aria-attributes`](https://github.com/wooorm/aria-attributes)
-    — List of ARIA attributes
-*   [`html-dangerous-encodings`](https://github.com/wooorm/html-dangerous-encodings)
-    — List of dangerous HTML character encoding labels
-*   [`html-encodings`](https://github.com/wooorm/html-encodings)
-    — List of HTML character encoding labels
-*   [`html-link-types`](https://github.com/wooorm/html-link-types)
-    — List of link types as used in HTML
-*   [`link-rel`](https://github.com/wooorm/link-rel)
-    — List of link types for `rel` on `link`
-*   [`meta-name`](https://github.com/wooorm/meta-name)
-    — List of values for `name` on `meta`
-*   [`web-namespaces`](https://github.com/wooorm/web-namespaces)
-    — Map of web namespaces
+*   [`wooorm/html-link-types`][html-link-types]
+    — list of link types for `rel` according to HTML
+*   [`wooorm/link-rel`][link-rel]
+    — list of link types for `rel` on `link`
+*   [`wooorm/aria-attributes`](https://github.com/wooorm/aria-attributes)
+    — list of ARIA attributes
+*   [`wooorm/html-dangerous-encodings`](https://github.com/wooorm/html-dangerous-encodings)
+    — list of dangerous HTML character encoding labels
+*   [`wooorm/html-encodings`](https://github.com/wooorm/html-encodings)
+    — list of HTML character encoding labels
+*   [`wooorm/meta-name`](https://github.com/wooorm/meta-name)
+    — list of values for `name` on `meta`
+*   [`wooorm/web-namespaces`](https://github.com/wooorm/web-namespaces)
+    — map of web namespaces
+
+## Contribute
+
+Yes please!
+See [How to Contribute to Open Source][contribute].
 
 ## License
 
@@ -93,8 +155,20 @@ elements.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[skypack]: https://www.skypack.dev
+
 [license]: license
 
 [author]: https://wooorm.com
 
-[extensions]: http://microformats.org/wiki/existing-rel-values
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[typescript]: https://www.typescriptlang.org
+
+[contribute]: https://opensource.guide/how-to-contribute/
+
+[microformats]: http://microformats.org/wiki/existing-rel-values
+
+[link-rel]: https://github.com/wooorm/link-rel
+
+[html-link-types]: https://github.com/wooorm/html-link-types
