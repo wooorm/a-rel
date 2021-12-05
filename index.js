@@ -1,3 +1,9 @@
+/**
+ * List of values for `rel` on `<a>` and `<area>` elements according to
+ * Microformats.
+ *
+ * @type {Array<string>}
+ */
 export const aRel = [
   'about',
   'acquaintance',

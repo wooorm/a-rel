@@ -1,3 +1,4 @@
+import assert from 'node:assert'
 import fs from 'node:fs'
 import https from 'node:https'
 import concatStream from 'concat-stream'
@@ -21,7 +22,16 @@ https.get('https://microformats.org/wiki/existing-rel-values', (response) => {
 
       fs.writeFile(
         'index.js',
-        'export const aRel = ' + JSON.stringify(value.sort(), null, 2) + '\n',
+        [
+          '/**',
+          ' * List of values for `rel` on `<a>` and `<area>` elements according to',
+          ' * Microformats.',
+          ' *',
+          ' * @type {Array<string>}',
+          ' */',
+          'export const aRel = ' + JSON.stringify(value.sort(), null, 2),
+          ''
+        ].join('\n'),
         bail
       )
 
@@ -30,6 +40,7 @@ https.get('https://microformats.org/wiki/existing-rel-values', (response) => {
        */
       function table(name) {
         const node = select('h2:has(#' + name + ') ~ table', tree)
+        assert(node, 'expected table to exist for `' + name + '`')
         const rows = selectAll('tr', node).slice(1)
         let index = -1
         /** @type {Array<string>} */

@@ -5,9 +5,8 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-List of values viable for use in `rel` attributes on `a` (and `area`) elements,
-as defined by the [MicroFormats][extensions] **formats** and **HTML5 link type
-extensions** tables.
+List of values for `rel` on `<a>` and `<area>` elements according to
+[Microformats][extensions].
 
 ## Install
 
