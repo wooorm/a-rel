@@ -1,4 +1,4 @@
-import assert from 'assert'
+import assert from 'node:assert'
 import test from 'tape'
 import {aRel} from './index.js'
 
@@ -6,7 +6,7 @@ test('aRel', function (t) {
   t.ok(Array.isArray(aRel), 'should be an array')
 
   t.doesNotThrow(function () {
-    var index = -1
+    let index = -1
     while (++index < aRel.length) {
       assert.strictEqual(
         typeof aRel[index],

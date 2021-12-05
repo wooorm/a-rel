@@ -1,4 +1,4 @@
-export var aRel = [
+export const aRel = [
   'acquaintance',
   'alternate',
   'amphtml',

@@ -1,23 +1,23 @@
-import fs from 'fs'
-import https from 'https'
-import concat from 'concat-stream'
-import bail from 'bail'
-import unified from 'unified'
-import html from 'rehype-parse'
-import select from 'hast-util-select'
-import toString from 'hast-util-to-string'
+import fs from 'node:fs'
+import https from 'node:https'
+import concatStream from 'concat-stream'
+import {bail} from 'bail'
+import {unified} from 'unified'
+import rehypeParse from 'rehype-parse'
+import {select, selectAll} from 'hast-util-select'
+import {toString} from 'hast-util-to-string'
 
-var proc = unified().use(html)
+const proc = unified().use(rehypeParse)
 
 https.get('https://microformats.org/wiki/existing-rel-values', onconnection)
 
 function onconnection(response) {
-  response.pipe(concat(onconcat))
+  response.pipe(concatStream(onconcat))
 }
 
 function onconcat(buf) {
-  var tree = proc.parse(buf)
-  var value = table('formats').concat(table('HTML5_link_type_extensions'))
+  const tree = proc.parse(buf)
+  const value = table('formats').concat(table('HTML5_link_type_extensions'))
 
   if (value.length === 0) {
     bail(new Error('Couldn’t find any rels'))
@@ -25,19 +25,19 @@ function onconcat(buf) {
 
   fs.writeFile(
     'index.js',
-    'export var aRel = ' + JSON.stringify(value.sort(), null, 2) + '\n',
+    'export const aRel = ' + JSON.stringify(value.sort(), null, 2) + '\n',
     bail
   )
 
   function table(name) {
-    var node = select.select('h2:has(#' + name + ') ~ table', tree)
-    var rows = select.selectAll('tr', node).slice(1)
-    var index = -1
-    var result = []
-    var cells
+    const node = select('h2:has(#' + name + ') ~ table', tree)
+    const rows = selectAll('tr', node).slice(1)
+    let index = -1
+    const result = []
+    let cells
 
     while (++index < rows.length) {
-      cells = select.selectAll('td', rows[index])
+      cells = selectAll('td', rows[index])
 
       if (/not allowed/i.test(toString(cells[2]).trim())) {
         continue
