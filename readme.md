@@ -31,9 +31,9 @@ These values come from [Microformats][].
 
 ## When should I use this?
 
-Use this package for a list of MicroFormats extensions on `<a>` and `<area>`
+Use this package for a list of Microformats extensions on `<a>` and `<area>`
 elements.
-See [`link-rel`][link-rel] for a list of MicroFormats extensions to `<link>`
+See [`link-rel`][link-rel] for a list of Microformats extensions to `<link>`
 and [`html-link-types`][html-link-types] if you specifically need to check which
 values are allowed by the HTML spec.
 
