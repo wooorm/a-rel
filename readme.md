@@ -50,7 +50,7 @@ There is no default export.
 
 ### `aRel`
 
-`string[]` — List of lowercase possible link types for `rel` on `a` and `area`
+`Array<string>` — List of lowercase possible link types for `rel` on `a` and `area`
 elements.
 
 ## Related

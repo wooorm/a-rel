@@ -9,43 +9,44 @@ import {toString} from 'hast-util-to-string'
 
 const proc = unified().use(rehypeParse)
 
-https.get('https://microformats.org/wiki/existing-rel-values', onconnection)
+https.get('https://microformats.org/wiki/existing-rel-values', (response) => {
+  response.pipe(
+    concatStream((buf) => {
+      const tree = proc.parse(buf)
+      const value = table('formats').concat(table('HTML5_link_type_extensions'))
 
-function onconnection(response) {
-  response.pipe(concatStream(onconcat))
-}
-
-function onconcat(buf) {
-  const tree = proc.parse(buf)
-  const value = table('formats').concat(table('HTML5_link_type_extensions'))
-
-  if (value.length === 0) {
-    bail(new Error('Couldn’t find any rels'))
-  }
-
-  fs.writeFile(
-    'index.js',
-    'export const aRel = ' + JSON.stringify(value.sort(), null, 2) + '\n',
-    bail
-  )
-
-  function table(name) {
-    const node = select('h2:has(#' + name + ') ~ table', tree)
-    const rows = selectAll('tr', node).slice(1)
-    let index = -1
-    const result = []
-    let cells
-
-    while (++index < rows.length) {
-      cells = selectAll('td', rows[index])
-
-      if (/not allowed/i.test(toString(cells[2]).trim())) {
-        continue
+      if (value.length === 0) {
+        bail(new Error('Couldn’t find any rels'))
       }
 
-      result.push(toString(cells[0]).trim())
-    }
+      fs.writeFile(
+        'index.js',
+        'export const aRel = ' + JSON.stringify(value.sort(), null, 2) + '\n',
+        bail
+      )
 
-    return result
-  }
-}
+      /**
+       * @param {string} name
+       */
+      function table(name) {
+        const node = select('h2:has(#' + name + ') ~ table', tree)
+        const rows = selectAll('tr', node).slice(1)
+        let index = -1
+        /** @type {Array<string>} */
+        const result = []
+
+        while (++index < rows.length) {
+          const cells = selectAll('td', rows[index])
+
+          if (/not allowed/i.test(toString(cells[2]).trim())) {
+            continue
+          }
+
+          result.push(toString(cells[0]).trim())
+        }
+
+        return result
+      }
+    })
+  )
+})
