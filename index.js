@@ -1,4 +1,5 @@
 export const aRel = [
+  'about',
   'acquaintance',
   'alternate',
   'amphtml',
@@ -24,6 +25,7 @@ export const aRel = [
   'date',
   'disclosure',
   'discussion',
+  'donation',
   'enclosure',
   'entry-content',
   'external',
@@ -43,6 +45,7 @@ export const aRel = [
   'license',
   'lightbox',
   'lightvideo',
+  'main',
   'me',
   'met',
   'muse',
